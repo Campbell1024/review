@@ -1,8 +1,5 @@
 package com.campbell.service;
 
-import com.campbell.utils.MyRunnable;
-import org.springframework.scheduling.annotation.Async;
-
 /**
  * @author Campbell
  * @date 2020/7/24

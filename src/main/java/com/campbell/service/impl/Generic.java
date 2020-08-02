@@ -7,8 +7,13 @@ import java.util.List;
  * @author Campbell
  * @date 2020/8/1
  */
-public class Common<T> {
+public class Generic<T> {
 
+    /**
+     * 泛型可变参数
+     *
+     * @param list
+     */
     public void showGeneric(T... list) {
         for (T t : list) {
             System.out.println(JSONObject.toJSONString(t));

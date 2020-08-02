@@ -51,22 +51,6 @@ public class PersonTest extends ReviewApplicationTests {
 
     }
 
-    public static <T> void show1(List<T> list) {
-        list.forEach(t -> {
-            System.out.println(JSONObject.toJSONString(t));
-        });
-    }
-
-    public static void show2(List<?> list) {
-        list.forEach(object -> {
-            System.out.println(JSONObject.toJSONString(object));
-        });
-    }
-
-    public static <T> void getClassName(T t){
-        System.out.println(t.getClass().getName());
-    }
-
     /**
      * 使用匿名内部类重写方法
      */

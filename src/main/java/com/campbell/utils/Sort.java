@@ -81,7 +81,7 @@ public class Sort {
     public static void selectSort(int[] arr) {
         //选出最小的数字，一共进行n-1轮，第一轮所有的数字都参与，往后每一轮都要去掉第一个数（最小的数）
         for (int i = 0; i < arr.length - 1; i++) {
-            //最小数下标初始值为每轮第一个数的下标
+            //将每轮第一个数的下标作为最小数下标初始值
             int minIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[minIndex]) {
@@ -109,11 +109,11 @@ public class Sort {
             //将每轮第一个数取出来
             int temp = arr[i];
             int j;
-            //将取出来的数字从后往前进行比较，如果前面数字比它大，就将前面的数字后移一位
+            //将取出来的数字从后往前进行比较，如果前面数字比它大，就将前面的数字后移一位，否则循环终止
             for (j = i - 1; j >= 0 && arr[j] > temp; j--) {
                 arr[j + 1] = arr[j];
             }
-            //插入比取出来的数字小的数字后面
+            //插入数字
             arr[j + 1] = temp;
         }
     }
@@ -126,11 +126,15 @@ public class Sort {
      * @return
      */
     public static int binarySearch(int[] arr, int key) {
+        //先排序
         Arrays.sort(arr);
         log.info("排序后的数组：" + Sort.arrayToString(arr));
+        //每次查找的下标起点
         int startIndex = 0;
+        //每次查找的下标终点
         int endIndex = arr.length - 1;
         while (startIndex <= endIndex) {
+            //每次查找的下标中间值
             int midIndex = (startIndex + endIndex) / 2;
             if (key < arr[midIndex]) {
                 endIndex = midIndex - 1;

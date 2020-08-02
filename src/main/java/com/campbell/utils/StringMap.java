@@ -18,6 +18,11 @@ public class StringMap {
         findChar(line);
     }
 
+    /**
+     * 统计字符串中每个字符出现的次数
+     *
+     * @param line
+     */
     public static void findChar(String line) {
         Map<Character, Integer> charMap = new HashMap<>();
         for (int i = 0; i < line.length(); i++) {

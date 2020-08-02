@@ -31,14 +31,14 @@ public class Person {
 
     }
 
+    public Person(String name, Integer age){
+        this(name,age,1);
+    }
+
     public Person(String name, Integer age, Integer gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-    }
-
-    public Person(String name, Integer age){
-        this(name,age,1);
     }
 
     @Override

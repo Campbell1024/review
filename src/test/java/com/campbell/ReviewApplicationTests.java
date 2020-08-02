@@ -1,11 +1,9 @@
 package com.campbell;
 
 import com.alibaba.fastjson.JSONObject;
-import com.campbell.constants.Grade;
 import com.campbell.entity.Person;
 import com.campbell.entity.Student;
 import com.campbell.entity.Teacher;
-import com.campbell.service.PersonTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +13,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @ExtendWith(SpringExtension.class)
@@ -25,99 +22,6 @@ public class ReviewApplicationTests {
 
     @Test
     void contextLoads() {
-    }
-
-    @Test
-    public void test1() {
-        System.out.println("aa" instanceof Object);
-    }
-
-    @Test
-    public void test2() {
-        System.out.println(String.class.getName());
-    }
-
-    @Test
-    public void test3() {
-        List<Student> studentList = new ArrayList<>();
-        studentList.add(new Student("zhangsan", 20, "0001"));
-        studentList.add(new Student("lisi", 21, "0002"));
-        studentList.add(new Student("wangwu", 22, "0003"));
-        PersonTest.show1(studentList);
-
-        System.out.println("************分割线**************");
-
-        List list = new ArrayList();
-        list.add(new Student("小白", 18, "0010"));
-        list.add(new Teacher("王", 30));
-        list.add(new Person("人", 10));
-        PersonTest.show2(list);
-
-        System.out.println(Student.class.getName());
-
-        Person person = new Teacher();
-        System.out.println(person.getClass().getName());
-
-        PersonTest.getClassName(new ConcurrentHashMap<>());
-
-        if (Objects.nonNull(person)) {
-            System.out.println(Objects.nonNull(person));
-        }
-
-        try {
-            Person person1 = Person.class.newInstance();
-            person1.setName("");
-            person1.setAge(0);
-            person1.setGender(0);
-            System.out.println(JSONObject.toJSONString(person1));
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        System.out.println(Person.class.getPackage().getName());
-    }
-
-    @Test
-    public void test4() {
-        while (true) {
-            System.out.println("请输入年级：");
-            int i = 0;
-            try {
-                Scanner scanner = new Scanner(System.in);
-                i = scanner.nextInt();
-            } catch (Exception e) {
-                log.error("error", e);
-            }
-            String gradeName;
-            switch (i) {
-                case Grade.GRADE_ONE_CODE:
-                    gradeName = Grade.GRADE_ONE_NAME;
-                    break;
-                case Grade.GRADE_TWO_CODE:
-                    gradeName = Grade.GRADE_TWO_NAME;
-                    break;
-                case Grade.GRADE_THREE_CODE:
-                    gradeName = Grade.GRADE_THREE_NAME;
-                    break;
-                case Grade.GRADE_FOUR_CODE:
-                    gradeName = Grade.GRADE_FOUR_NAME;
-                    break;
-                case Grade.GRADE_FIVE_CODE:
-                    gradeName = Grade.GRADE_FIVE_NAME;
-                    break;
-                case Grade.GRADE_SIX_CODE:
-                    gradeName = Grade.GRADE_SIX_NAME;
-                    break;
-                default:
-                    gradeName = null;
-                    break;
-            }
-            log.info(gradeName);
-            if (i == 3) {
-                break;
-            }
-        }
     }
 
     @Test
