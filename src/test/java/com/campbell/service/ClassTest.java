@@ -5,7 +5,6 @@ import com.campbell.ReviewApplicationTests;
 import com.campbell.entity.Person;
 import com.campbell.entity.Student;
 import org.junit.jupiter.api.Test;
-
 import java.util.Objects;
 
 /**
@@ -14,6 +13,9 @@ import java.util.Objects;
  */
 public class ClassTest extends ReviewApplicationTests {
 
+    /**
+     * 类的全限定名
+     */
     @Test
     public void testClass() {
         Student student = null;

@@ -29,7 +29,8 @@ public class Student extends Person{
         this.grade = grade;
     }
 
-    public void study(){
+    @Override
+    public void work(){
         System.out.println("学习");
     }
 

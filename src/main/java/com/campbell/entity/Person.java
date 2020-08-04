@@ -2,6 +2,7 @@ package com.campbell.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Objects;
@@ -13,6 +14,7 @@ import java.util.Objects;
 @SuperBuilder
 @Getter
 @Setter
+@ToString
 public class Person {
     /**
      * 姓名
@@ -39,6 +41,10 @@ public class Person {
         this.name = name;
         this.age = age;
         this.gender = gender;
+    }
+
+    public void work(){
+        System.out.println("工作");
     }
 
     @Override

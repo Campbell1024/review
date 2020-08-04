@@ -29,4 +29,8 @@ public class Teacher extends Person{
         this.level = level;
     }
 
+    @Override
+    public void work() {
+        System.out.println("教学");
+    }
 }

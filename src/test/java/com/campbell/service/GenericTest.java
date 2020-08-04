@@ -17,6 +17,9 @@ import java.util.List;
 @Slf4j
 public class GenericTest extends ReviewApplicationTests {
 
+    /**
+     * 泛型
+     */
     @Test
     public void testGeneric() {
         Generic<Person> generic = new Generic<>();
