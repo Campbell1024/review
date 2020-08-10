@@ -29,12 +29,12 @@ public class Person {
      */
     private Integer gender;
 
-    public Person(){
+    public Person() {
 
     }
 
-    public Person(String name, Integer age){
-        this(name,age,1);
+    public Person(String name, Integer age) {
+        this(name, age, 1);
     }
 
     public Person(String name, Integer age, Integer gender) {
@@ -43,7 +43,7 @@ public class Person {
         this.gender = gender;
     }
 
-    public void work(){
+    public void work() {
         System.out.println("工作");
     }
 

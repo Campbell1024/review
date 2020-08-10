@@ -2,6 +2,8 @@ package com.campbell.utils;
 
 import com.alibaba.fastjson.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -36,4 +38,23 @@ public class StringMap {
         }
         System.out.println(JSONObject.toJSONString(charMap));
     }
+
+    /**
+     * 日期字符串格式是否正确
+     *
+     * @param s
+     * @return
+     */
+    public static boolean isMatch(String s) {
+        boolean flag = true;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        sdf.setLenient(false);
+        try {
+            sdf.parse(s);
+        } catch (ParseException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
 }

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.campbell.entity.Person;
 import org.junit.jupiter.api.Test;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -64,13 +65,13 @@ public class CollectionTest {
     }
 
     @Test
-    public void testMap(){
+    public void testMap() {
         List<Person> list = new ArrayList<>();
         list.add(new Person("rose", 18));
         list.add(new Person("jack", 16));
         list.add(new Person("abc", 20));
 
-        Map<String,Person> personMap = list.stream().collect(Collectors.toMap(Person::getName, person -> person));
+        Map<String, Person> personMap = list.stream().collect(Collectors.toMap(Person::getName, person -> person));
 
         Set<String> nameSet = personMap.keySet();
         System.out.println(JSONObject.toJSONString(nameSet));
@@ -80,36 +81,36 @@ public class CollectionTest {
 
         System.out.println(personMap.containsKey("rose"));
 
-        Set<Map.Entry<String,Person>> entrySet = personMap.entrySet();
+        Set<Map.Entry<String, Person>> entrySet = personMap.entrySet();
         System.out.println(JSONObject.toJSONString(entrySet));
         System.out.println(JSONObject.toJSONString(personMap));
 
         nameSet.forEach(name -> {
-            System.out.println(name+":"+JSONObject.toJSONString(personMap.get(name)));
+            System.out.println(name + ":" + JSONObject.toJSONString(personMap.get(name)));
         });
 
-        for (Map.Entry<String,Person> entry : personMap.entrySet()){
-            System.out.println(entry.getKey()+":"+JSONObject.toJSONString(entry.getValue()));
+        for (Map.Entry<String, Person> entry : personMap.entrySet()) {
+            System.out.println(entry.getKey() + ":" + JSONObject.toJSONString(entry.getValue()));
         }
 
         personMap.entrySet().forEach(entry -> {
-            System.out.println(entry.getKey()+":"+JSONObject.toJSONString(entry.getValue()));
+            System.out.println(entry.getKey() + ":" + JSONObject.toJSONString(entry.getValue()));
         });
 
         Properties properties = new Properties();
         //存储键值对
-        properties.setProperty("k1","v1");
-        properties.setProperty("k2","v2");
-        properties.setProperty("k3","v3");
-        properties.setProperty("k4","v4");
+        properties.setProperty("k1", "v1");
+        properties.setProperty("k2", "v2");
+        properties.setProperty("k3", "v3");
+        properties.setProperty("k4", "v4");
         System.out.println(properties);
         //获取k2键对应的值
         String value = properties.getProperty("k2");
         System.out.println(value);
         //所有的键存储到Set集合
         Set<String> set = properties.stringPropertyNames();
-        for(String key : set){
-            System.out.println(key+"=="+properties.getProperty(key));
+        for (String key : set) {
+            System.out.println(key + "==" + properties.getProperty(key));
         }
     }
 }

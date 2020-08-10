@@ -2,6 +2,7 @@ package com.campbell.service;
 
 import com.campbell.entity.Person;
 import org.junit.jupiter.api.Test;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,32 +13,6 @@ import java.util.*;
  * @date 2020/8/2
  */
 public class CommonTest {
-
-    @Test
-    public void testString() {
-
-        System.out.println("请输入字符串：");
-        String str = new Scanner(System.in).nextLine();
-        char[] ch = str.toCharArray();
-        ch[0] = String.valueOf(ch[0]).toUpperCase().charAt(0);
-        System.out.println(new String(ch));
-
-        System.out.println(String.valueOf(str.charAt(0)).toUpperCase().concat(str.substring(1)));
-
-        System.out.println(str.substring(0, 1).toUpperCase().concat(str.substring(1)));
-
-        String tel = "18896813767";
-        String telReg = "1[345678][0-9]{9}";
-        boolean flag = tel.matches(telReg);
-        System.out.println(flag);
-
-        byte[] bytes = tel.getBytes();
-        System.out.println(bytes);
-
-        char[] chars = tel.toCharArray();
-        System.out.println(chars);
-
-    }
 
     @Test
     public void testBigDecimal() {

@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell.thread;
 
 import com.campbell.service.impl.MyThread;
 
@@ -10,7 +10,7 @@ public class ThreadTest {
 
     public static void main(String[] args) {
         MyThread myThread = new MyThread();
-        myThread.setName("haha");
+        myThread.setName("thread");
         myThread.start();
         Thread mainThread = Thread.currentThread();
         System.out.println(mainThread.getName());

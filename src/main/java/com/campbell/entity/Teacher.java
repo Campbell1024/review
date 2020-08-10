@@ -9,21 +9,21 @@ import lombok.experimental.SuperBuilder;
  */
 @SuperBuilder
 @Data
-public class Teacher extends Person{
+public class Teacher extends Person {
 
     private Integer type;
 
     private Integer level;
 
-    public Teacher(){
+    public Teacher() {
 
     }
 
-    public Teacher(String name,Integer age){
-        this(name,age,1,1,1);
+    public Teacher(String name, Integer age) {
+        this(name, age, 1, 1, 1);
     }
 
-    public Teacher(String name,Integer age,Integer gender,Integer type,Integer level){
+    public Teacher(String name, Integer age, Integer gender, Integer type, Integer level) {
         super(name, age, gender);
         this.type = type;
         this.level = level;

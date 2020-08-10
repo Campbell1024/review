@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell.thread;
 
 /**
  * @author Campbell
@@ -20,7 +20,7 @@ public class RunnableTest {
     /**
      * 匿名内部类写法
      */
-    public void createThread(){
+    public void createThread() {
         /*Runnable run = new Runnable() {
             @Override
             public void run() {
@@ -28,21 +28,19 @@ public class RunnableTest {
             }
         };
         new Thread(run).start();*/
-        
-        Thread thread = new Thread(() -> round());
-        thread.setName("线程1");
+
+        Thread thread = new Thread(() -> round(), "线程1");
 
         Runnable runnable = () -> round();
-        Thread thread1 = new Thread(runnable);
-        thread1.setName("线程2");
+        Thread thread1 = new Thread(runnable, "线程2");
 
         thread.start();
         thread1.start();
     }
 
-    public void round(){
-        for (int i=0;i<100;i++){
-            System.out.println(Thread.currentThread().getName()+" "+i);
+    public void round() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println(Thread.currentThread().getName() + " " + i);
         }
     }
 
