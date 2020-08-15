@@ -55,7 +55,7 @@ public class StringTest {
         String numResult = String.format("%08d", 1);
         System.out.println(numResult);
 
-        System.out.println(String.format("%tF %<tT%n", new Date()));
+        System.out.println(String.format("%tF %<tT", new Date()));
         System.out.printf("%tF %<tT%n", new Date());
 
         System.out.println(String.format("%.2f", 3.145));
