@@ -1,6 +1,8 @@
 package com.campbell.thread;
 
 /**
+ * 守护线程
+ *
  * @author Campbell
  * @date 2020/8/17
  */
@@ -17,7 +19,7 @@ public class DaemonTest {
                 e.printStackTrace();
             }
         });
-        t.setDaemon(true);  // 把指定的线程设置为守护线程
+        t.setDaemon(true);
         t.start();
         Thread.sleep(3000);
         System.out.println("主线程结束");

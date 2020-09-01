@@ -54,8 +54,10 @@ public class CollectionTest {
         list.add(new Person("rose", 18));
         list.add(new Person("jack", 16));
         list.add(new Person("abc", 20));
-        Collections.sort(list, Comparator.comparingInt(Person::getAge).reversed());
         list.forEach(System.out::println);
+
+        list.sort(Comparator.comparingInt(Person::getAge).reversed());
+        Collections.sort(list, Comparator.comparingInt(Person::getAge).reversed());
 
         List<Integer> ageList = list.stream().sorted(Comparator.comparingInt(Person::getAge)).map(Person::getAge).collect(Collectors.toList());
         System.out.println(ageList.toString());

@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author Campbell
  * @date 2020/7/5
  */
-public class SafeTest {
+public class SynchronizedTest {
 
     private static int amount = 100;
     private static int modCount = 0;
@@ -18,7 +18,7 @@ public class SafeTest {
         //lambda表达式
         Runnable runnable = () -> ticket();
         //方法引用
-        Runnable run = SafeTest::ticket;
+        Runnable run = SynchronizedTest::ticket;
         new Thread(run, "窗口1").start();
         new Thread(run, "窗口2").start();
         new Thread(run, "窗口3").start();
@@ -35,7 +35,7 @@ public class SafeTest {
                     }
                     System.out.println(Thread.currentThread().getName() + "正在卖第" + (amount--) + "张票");
                     System.out.println("已卖出"+(++modCount)+"张票");
-                }else {
+                } else {
                     break;
                 }
             }*/

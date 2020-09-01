@@ -22,37 +22,6 @@ public class ConditionTest {
 
     private Condition consumer = lock.newCondition();
 
-    public void product() {
-        lock.lock();
-        while (flag == true) {
-            try {
-                producer.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        count++;
-        System.out.println(Thread.currentThread().getName() + "正在生产第" + count + "个包子");
-        flag = true;
-        consumer.signal();
-        lock.unlock();
-    }
-
-    public void consume() {
-        lock.lock();
-        while (flag == false) {
-            try {
-                consumer.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println(Thread.currentThread().getName() + "正在消费第" + count + "个包子");
-        flag = false;
-        producer.signal();
-        lock.unlock();
-    }
-
     public static void main(String[] args) {
         ConditionTest conditionTest = new ConditionTest();
         Runnable productRun = () -> {
@@ -67,8 +36,39 @@ public class ConditionTest {
         };
         new Thread(productRun, "后厨1").start();
         new Thread(productRun, "后厨2").start();
-        new Thread(productRun, "后厨3").start();
-        new Thread(consumeRun, "顾客").start();
+        new Thread(consumeRun, "顾客1").start();
+        new Thread(consumeRun, "顾客2").start();
+    }
+
+    public void product() {
+        lock.lock();
+        while (flag == true) {
+            try {
+                producer.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        count++;
+        System.out.println(Thread.currentThread().getName() + "正在生产第" + count + "个包子");
+        flag = true;
+        consumer.signalAll();
+        lock.unlock();
+    }
+
+    public void consume() {
+        lock.lock();
+        while (flag == false) {
+            try {
+                consumer.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(Thread.currentThread().getName() + "正在消费第" + count + "个包子");
+        flag = false;
+        producer.signalAll();
+        lock.unlock();
     }
 
 }
