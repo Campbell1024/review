@@ -16,11 +16,11 @@ public class MyThread extends Thread {
         System.out.println("开始");
         while (flag) {
             System.out.println("time:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-            try {
+            /*try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
         System.out.println("结束");
     }
