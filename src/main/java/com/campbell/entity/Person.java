@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -15,7 +16,9 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-public class Person {
+public class Person implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     /**
      * 姓名
      */
@@ -23,7 +26,7 @@ public class Person {
     /**
      * 年龄
      */
-    private Integer age;
+    private transient Integer age;
     /**
      * 性别
      */
