@@ -1,4 +1,4 @@
-package com.campbell.constants;
+package com.campbell.enums;
 
 /**
  * @author Campbell
