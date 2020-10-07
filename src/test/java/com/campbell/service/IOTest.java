@@ -221,11 +221,11 @@ public class IOTest {
     }
 
     @Test
-    public void propertiesTest() throws IOException{
+    public void propertiesTest() throws IOException {
         Properties properties = new Properties();
-        properties.load(new FileReader("D:\\IDEA Workspaces\\review\\src\\main\\resources\\application.properties"));
+        properties.load(new FileReader("D:\\IDEA Workspaces\\review\\src\\main\\resources\\application.yml"));
         Set<String> strings = properties.stringPropertyNames();
-        strings.forEach(s -> System.out.println(s+":"+properties.getProperty(s)));
+        strings.forEach(s -> System.out.println(s + ":" + properties.getProperty(s)));
     }
 
 }

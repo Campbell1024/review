@@ -1,0 +1,42 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: review
+  datasource:
+    name: review-datasource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mydb?serverTimezone=GMT
+      username: root
+      password: 225400
+      #初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
+      initial-size: 1
+      #最小连接池连接数量，最小空闲数量
+      min-idle: 1
+      #最大连接池连接数量，最大活跃连接数
+      max-active: 20
+      #获取连接等待超时时间
+      max-wait: 60000
+      #间隔多久进行一次检测，检测需要关闭的空闲连接
+      time-between-eviction-runs-millis: 60000
+      #一个连接在池中最小生存的时间
+      min-evictable-idle-time-millis: 300000
+      #用来测试连接是否可用的SQL语句
+      validation-query: SELECT 1
+      #建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果此连接空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+      test-while-idle: true
+      #申请连接时会使用validationQuery检测连接是否有效，true会降低性能，如果是true，并且检测到连接已关闭，会获取其它的可用的连接
+      test-on-borrow: false
+      #归还连接时会使用validationQuery检测连接是否有效，true会降低性能，如果是true，并且检测到连接已关闭，会获取其它的可用的连接，放回数据库线程池
+      test-on-return: false
+      #是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+      pool-prepared-statements: false
+      #指定每个连接上PSCache的大小
+      max-pool-prepared-statement-per-connection-size: 20
+      #通过别名的方式配置扩展插件，监控统计用stat，日志用log4j，防御sql注入用wall，配置多个英文逗号分隔
+      filters: stat
+      #通过connectProperties属性来打开mergeSql功能；记录慢SQL
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
