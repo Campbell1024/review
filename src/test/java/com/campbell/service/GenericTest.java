@@ -4,7 +4,7 @@ import com.campbell.ReviewApplicationTests;
 import com.campbell.entity.Person;
 import com.campbell.entity.Student;
 import com.campbell.entity.Teacher;
-import com.campbell.service.impl.Generic;
+import com.campbell.utils.Generic;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

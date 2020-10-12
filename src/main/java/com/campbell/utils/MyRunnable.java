@@ -1,4 +1,4 @@
-package com.campbell.service.impl;
+package com.campbell.utils;
 
 /**
  * @author Campbell

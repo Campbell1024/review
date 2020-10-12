@@ -1,4 +1,4 @@
-package com.campbell.service.impl;
+package com.campbell.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

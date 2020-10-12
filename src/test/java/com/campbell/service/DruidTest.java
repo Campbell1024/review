@@ -31,4 +31,31 @@ public class DruidTest {
         }
         DruidUtils.close(resultSet, ps, connection);
     }
+
+    @Test
+    public void transactionTest() throws SQLException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        try {
+            connection = DruidUtils.getConnection();
+            connection.setAutoCommit(false);
+            String sql1 = "update account set money=money-100 where name=?";
+            ps = connection.prepareStatement(sql1);
+            ps.setString(1, "a");
+            ps.executeUpdate();
+            int n = 1 / 0;
+            String sql2 = "update account set money=money+100 where name=?";
+            ps = connection.prepareStatement(sql2);
+            ps.setString(1, "b");
+            ps.executeUpdate();
+            connection.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (connection != null) {
+                connection.rollback();
+            }
+        } finally {
+            DruidUtils.close(ps, connection);
+        }
+    }
 }
