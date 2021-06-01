@@ -1,10 +1,10 @@
-package com.campbell.constants;
+package com.campbell.constant;
 
 /**
  * @author Campbell
  * @date 2020/7/1
  */
-public class Grade {
+public class GradeConstants {
 
     public static final int GRADE_ONE_CODE = 1;
     public static final int GRADE_TWO_CODE = 2;

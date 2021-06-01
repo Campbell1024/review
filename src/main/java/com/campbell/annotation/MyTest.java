@@ -1,4 +1,4 @@
-package com.campbell.annotations;
+package com.campbell.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,13 +9,7 @@ import java.lang.annotation.Target;
  * @author Campbell
  * @date 2020/9/26
  */
-@Target({ElementType.TYPE, ElementType.METHOD})
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Book {
-
-    String value();
-
-    double price() default 100;
-
-    String[] authors();
+public @interface MyTest {
 }

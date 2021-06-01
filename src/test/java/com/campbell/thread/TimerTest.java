@@ -1,6 +1,6 @@
 package com.campbell.thread;
 
-import com.campbell.utils.StringMap;
+import com.campbell.util.StringMap;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

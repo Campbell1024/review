@@ -1,9 +1,9 @@
 package com.campbell.service;
 
-import com.campbell.annotations.Book;
-import com.campbell.annotations.BookStore;
-import com.campbell.annotations.MyTest;
-import com.campbell.annotations.MyTestDemo;
+import com.campbell.annotation.Book;
+import com.campbell.annotation.BookStore;
+import com.campbell.annotation.MyTest;
+import com.campbell.annotation.MyTestDemo;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;

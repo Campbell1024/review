@@ -1,6 +1,6 @@
 package com.campbell.service;
 
-import com.campbell.utils.JDBCUtils;
+import com.campbell.util.JDBCUtils;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;

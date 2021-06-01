@@ -1,4 +1,4 @@
-package com.campbell.utils;
+package com.campbell.util;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
 package com.campbell.controller;
 
-import com.campbell.utils.DruidUtils;
+import com.campbell.util.DruidUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

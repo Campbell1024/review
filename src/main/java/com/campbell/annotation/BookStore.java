@@ -1,4 +1,4 @@
-package com.campbell.annotations;
+package com.campbell.annotation;
 
 /**
  * @author Campbell

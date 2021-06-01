@@ -1,7 +1,7 @@
 package com.campbell.service;
 
 import com.campbell.ReviewApplicationTests;
-import com.campbell.constants.Grade;
+import com.campbell.constant.GradeConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -29,23 +29,23 @@ public class ChooseTest extends ReviewApplicationTests {
             }
             String gradeName;
             switch (i) {
-                case Grade.GRADE_ONE_CODE:
-                    gradeName = Grade.GRADE_ONE_NAME;
+                case GradeConstants.GRADE_ONE_CODE:
+                    gradeName = GradeConstants.GRADE_ONE_NAME;
                     break;
-                case Grade.GRADE_TWO_CODE:
-                    gradeName = Grade.GRADE_TWO_NAME;
+                case GradeConstants.GRADE_TWO_CODE:
+                    gradeName = GradeConstants.GRADE_TWO_NAME;
                     break;
-                case Grade.GRADE_THREE_CODE:
-                    gradeName = Grade.GRADE_THREE_NAME;
+                case GradeConstants.GRADE_THREE_CODE:
+                    gradeName = GradeConstants.GRADE_THREE_NAME;
                     break;
-                case Grade.GRADE_FOUR_CODE:
-                    gradeName = Grade.GRADE_FOUR_NAME;
+                case GradeConstants.GRADE_FOUR_CODE:
+                    gradeName = GradeConstants.GRADE_FOUR_NAME;
                     break;
-                case Grade.GRADE_FIVE_CODE:
-                    gradeName = Grade.GRADE_FIVE_NAME;
+                case GradeConstants.GRADE_FIVE_CODE:
+                    gradeName = GradeConstants.GRADE_FIVE_NAME;
                     break;
-                case Grade.GRADE_SIX_CODE:
-                    gradeName = Grade.GRADE_SIX_NAME;
+                case GradeConstants.GRADE_SIX_CODE:
+                    gradeName = GradeConstants.GRADE_SIX_NAME;
                     break;
                 default:
                     gradeName = null;
