@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @date 2020/6/19
  */
 @Slf4j
-public class Sort {
+public class SortUtils {
 
     /**
      * 按指定格式输出数组
@@ -128,7 +128,7 @@ public class Sort {
     public static int binarySearch(int[] arr, int key) {
         //先排序
         Arrays.sort(arr);
-        log.info("排序后的数组：" + Sort.arrayToString(arr));
+        log.info("排序后的数组：" + SortUtils.arrayToString(arr));
         //每次查找的下标起点
         int startIndex = 0;
         //每次查找的下标终点

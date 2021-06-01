@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell;
 
 import com.campbell.util.DruidUtils;
 import org.junit.jupiter.api.Test;

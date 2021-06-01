@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Campbell
  * @date 2020/7/18
  */
-public class StringMap {
+public class StringUtils {
 
     public static void main(String[] args) {
         System.out.println("请输入字符串");

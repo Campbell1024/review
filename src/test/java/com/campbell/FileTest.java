@@ -1,10 +1,8 @@
-package com.campbell.service;
+package com.campbell;
 
-import com.campbell.ReviewApplicationTests;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -12,7 +10,7 @@ import java.util.Scanner;
  * @author Campbell
  * @date 2020/9/19
  */
-public class FileTest extends ReviewApplicationTests {
+public class FileTest extends BaseTest {
 
     @Test
     public void newFile() {

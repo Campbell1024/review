@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell;
 
 import com.campbell.entity.Person;
 import org.junit.jupiter.api.Test;

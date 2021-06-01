@@ -1,6 +1,5 @@
-package com.campbell.service;
+package com.campbell;
 
-import com.campbell.ReviewApplicationTests;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ import java.util.Scanner;
  * @date 2020/7/31
  */
 @Slf4j
-public class RoundTest extends ReviewApplicationTests {
+public class RoundTest extends BaseTest {
 
     /**
      * 九九乘法表

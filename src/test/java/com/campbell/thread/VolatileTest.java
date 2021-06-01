@@ -1,6 +1,6 @@
 package com.campbell.thread;
 
-import com.campbell.util.MyThread;
+import com.campbell.entity.MyThread;
 
 /**
  * @author Campbell

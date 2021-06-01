@@ -1,6 +1,5 @@
-package com.campbell.service;
+package com.campbell;
 
-import com.campbell.ReviewApplicationTests;
 import com.campbell.constant.GradeConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,7 @@ import java.util.Scanner;
  * @date 2020/7/31
  */
 @Slf4j
-public class ChooseTest extends ReviewApplicationTests {
+public class ChooseTest extends BaseTest {
 
     /**
      * switch选择语句

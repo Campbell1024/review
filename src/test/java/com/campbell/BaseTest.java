@@ -12,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ReviewApplication.class)
 @Slf4j
-public class ReviewApplicationTests {
+public class BaseTest {
 
     @BeforeAll
     protected static void beforeAll() {

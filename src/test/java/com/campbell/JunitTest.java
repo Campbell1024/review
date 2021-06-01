@@ -1,13 +1,12 @@
-package com.campbell.service;
+package com.campbell;
 
-import com.campbell.ReviewApplicationTests;
 import org.junit.jupiter.api.Test;
 
 /**
  * @author Campbell
  * @date 2020/9/26
  */
-public class JunitTest extends ReviewApplicationTests {
+public class JunitTest extends BaseTest {
 
     @Test
     public void test1(){

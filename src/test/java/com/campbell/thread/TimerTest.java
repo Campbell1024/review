@@ -1,6 +1,6 @@
 package com.campbell.thread;
 
-import com.campbell.util.StringMap;
+import com.campbell.util.StringUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,7 +23,7 @@ public class TimerTest {
             System.out.println("格式错误！请重新输入：");
             timeString = new Scanner(System.in).nextLine();
         }*/
-        while (!StringMap.isMatch(timeString)) {
+        while (!StringUtils.isMatch(timeString)) {
             System.out.println("格式错误！请重新输入：");
             timeString = new Scanner(System.in).nextLine();
         }

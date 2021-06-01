@@ -1,9 +1,6 @@
-package com.campbell.service;
+package com.campbell;
 
-import com.alibaba.fastjson.JSONObject;
-import com.campbell.ReviewApplicationTests;
 import com.campbell.entity.Person;
-import com.campbell.entity.Student;
 import org.junit.jupiter.api.Test;
 import sun.net.spi.nameservice.dns.DNSNameService;
 
@@ -11,14 +8,13 @@ import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Properties;
 
 /**
  * @author Campbell
  * @date 2020/8/2
  */
-public class ClassTest extends ReviewApplicationTests {
+public class ClassTest extends BaseTest {
 
     @Test
     public void classLoaderTest() {

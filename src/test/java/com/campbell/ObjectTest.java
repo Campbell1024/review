@@ -1,7 +1,6 @@
-package com.campbell.service;
+package com.campbell;
 
 import com.alibaba.fastjson.JSONObject;
-import com.campbell.ReviewApplicationTests;
 import com.campbell.entity.Person;
 import com.campbell.entity.Student;
 import com.campbell.entity.Teacher;
@@ -13,7 +12,7 @@ import java.util.*;
  * @author Campbell
  * @date 2020/6/27
  */
-public class ObjectTest extends ReviewApplicationTests {
+public class ObjectTest extends BaseTest {
 
     /**
      * 方法的多态

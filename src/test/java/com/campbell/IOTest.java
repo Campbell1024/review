@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell;
 
 import com.alibaba.fastjson.JSONObject;
 import com.campbell.entity.Person;

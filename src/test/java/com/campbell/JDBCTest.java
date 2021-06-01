@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell;
 
 import com.campbell.util.JDBCUtils;
 import org.junit.jupiter.api.Test;

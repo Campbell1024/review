@@ -1,12 +1,12 @@
 package com.campbell.thread;
 
-import com.campbell.ReviewApplicationTests;
+import com.campbell.BaseTest;
 
 /**
  * @author Campbell
  * @date 2020/8/4
  */
-public class DeadLockTest extends ReviewApplicationTests {
+public class DeadLockTest extends BaseTest {
 
     public static class Lock1 {
         public static Lock1 lock1 = new Lock1();

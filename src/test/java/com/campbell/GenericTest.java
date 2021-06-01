@@ -1,10 +1,9 @@
-package com.campbell.service;
+package com.campbell;
 
-import com.campbell.ReviewApplicationTests;
 import com.campbell.entity.Person;
 import com.campbell.entity.Student;
 import com.campbell.entity.Teacher;
-import com.campbell.util.Generic;
+import com.campbell.entity.Generic;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ import java.util.List;
  * @date 2020/8/1
  */
 @Slf4j
-public class GenericTest extends ReviewApplicationTests {
+public class GenericTest extends BaseTest {
 
     /**
      * 泛型

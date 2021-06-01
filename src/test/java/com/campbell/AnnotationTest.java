@@ -1,4 +1,4 @@
-package com.campbell.service;
+package com.campbell;
 
 import com.campbell.annotation.Book;
 import com.campbell.annotation.BookStore;
