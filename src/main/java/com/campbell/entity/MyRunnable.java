@@ -5,6 +5,7 @@ package com.campbell.entity;
  * @date 2020/7/24
  */
 public class MyRunnable implements Runnable {
+
     @Override
     public void run() {
         for (int i = 0; i < 20; i++) {

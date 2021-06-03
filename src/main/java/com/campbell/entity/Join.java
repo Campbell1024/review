@@ -1,25 +1,13 @@
 package com.campbell.entity;
 
 
-import java.util.concurrent.CountDownLatch;
-
 /**
  * @author Campbell
  * @date 2021/6/2
  */
-public class Run implements Runnable {
+public class Join {
 
-    private Thread thread;
-
-    public Run() {
-    }
-
-    public Run(Thread thread) {
-        this.thread = thread;
-    }
-
-    @Override
-    public void run() {
+    public static void start(Thread thread) {
         try {
             if (null != thread) {
                 thread.join();
@@ -29,13 +17,12 @@ public class Run implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + "结束");
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(new Run(), "线程A");
-        Thread t2 = new Thread(new Run(t1), "线程B");
-        Thread t3 = new Thread(new Run(t2), "线程C");
+        Thread t1 = new Thread(() -> Join.start(null));
+        Thread t2 = new Thread(() -> Join.start(t1));
+        Thread t3 = new Thread(() -> Join.start(t2));
         t1.start();
         t2.start();
         t3.start();
