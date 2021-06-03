@@ -1,12 +1,10 @@
-package com.campbell.thread;
-
-import com.campbell.entity.MyThread;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/8/26
  */
-public class VolatileTest {
+public class VolatileDemo {
 
     public static void main(String[] args) {
         MyThread myThread = new MyThread();

@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author Campbell
  * @date 2020/7/5
  */
-public class SynchronizedTest {
+public class SynchronizedDemo {
 
     private static int amount = 100;
     private static int modCount = 0;
@@ -18,7 +18,7 @@ public class SynchronizedTest {
         //lambda表达式
         Runnable runnable = () -> ticket();
         //方法引用
-        Runnable run = SynchronizedTest::ticket;
+        Runnable run = SynchronizedDemo::ticket;
         new Thread(run, "窗口1").start();
         new Thread(run, "窗口2").start();
         new Thread(run, "窗口3").start();

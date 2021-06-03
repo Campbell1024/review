@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,12 +7,12 @@ import java.util.Date;
  * @author Campbell
  * @date 2020/8/26
  */
-public class StopTest {
+public class StopDemo {
 
     public boolean flag = true;
 
     public static void main(String[] args) {
-        StopTest stopTest = new StopTest();
+        StopDemo stopTest = new StopDemo();
         new Thread(stopTest::test).start();
         try {
             Thread.sleep(2000);

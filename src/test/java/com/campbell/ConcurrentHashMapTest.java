@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell;
 
 import org.junit.jupiter.api.Test;
 

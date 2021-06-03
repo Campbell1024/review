@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.*;
 
@@ -6,10 +6,10 @@ import java.util.concurrent.*;
  * @author Campbell
  * @date 2020/9/3
  */
-public class CallableTest {
+public class CallableDemo {
 
     public static void main(String[] args) {
-        CallableTest callableTest = new CallableTest();
+        CallableDemo callableTest = new CallableDemo();
 
         FutureTask<String> futureTask = new FutureTask<>(callableTest::test);
         /*new Thread(futureTask).start();*/

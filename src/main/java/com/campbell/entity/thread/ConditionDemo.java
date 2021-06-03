@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author Campbell
  * @date 2020/8/7
  */
-public class ConditionTest {
+public class ConditionDemo {
     //有没有包子
     private boolean flag;
     //包子的数量
@@ -23,7 +23,7 @@ public class ConditionTest {
     private Condition consumer = lock.newCondition();
 
     public static void main(String[] args) {
-        ConditionTest conditionTest = new ConditionTest();
+        ConditionDemo conditionTest = new ConditionDemo();
         Runnable productRun = () -> {
             while (true) {
                 conditionTest.product();

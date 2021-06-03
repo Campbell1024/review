@@ -1,4 +1,4 @@
-package com.campbell.entity;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

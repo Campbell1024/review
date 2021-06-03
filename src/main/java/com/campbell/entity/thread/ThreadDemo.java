@@ -1,12 +1,10 @@
-package com.campbell.thread;
-
-import com.campbell.entity.MyThread;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/7/24
  */
-public class ThreadTest {
+public class ThreadDemo {
 
     public static void main(String[] args) {
         MyThread myThread = new MyThread();

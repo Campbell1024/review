@@ -1,13 +1,13 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/8/16
  */
-public class SleepTest {
+public class SleepDemo {
 
     public static void main(String[] args) {
-        Thread thread = new Thread(SleepTest::sleep);
+        Thread thread = new Thread(SleepDemo::sleep);
         System.out.println("开始于：" + System.currentTimeMillis());
         thread.start();
         System.out.println("结束于：" + System.currentTimeMillis());

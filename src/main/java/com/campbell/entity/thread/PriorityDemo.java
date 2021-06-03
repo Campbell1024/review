@@ -1,10 +1,10 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/8/17
  */
-public class PriorityTest {
+public class PriorityDemo {
 
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName() + "线程的优先级：" + Thread.currentThread().getPriority());

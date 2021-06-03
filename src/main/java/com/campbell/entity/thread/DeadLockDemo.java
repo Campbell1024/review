@@ -1,12 +1,10 @@
-package com.campbell.thread;
-
-import com.campbell.BaseTest;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/8/4
  */
-public class DeadLockTest extends BaseTest {
+public class DeadLockDemo {
 
     public static class Lock1 {
         public static Lock1 lock1 = new Lock1();

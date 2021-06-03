@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.util.Arrays;
 import java.util.concurrent.*;
@@ -7,7 +7,7 @@ import java.util.concurrent.*;
  * @author Campbell
  * @date 2020/8/7
  */
-public class ThreadPoolTest {
+public class ThreadPoolDemo {
 
     public static String[] callString(String s) {
         return s.split(",");
@@ -24,7 +24,7 @@ public class ThreadPoolTest {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         Callable<String[]> callableString = () -> callString("a,b,c,d");
-        Callable<Integer> callableInteger = ThreadPoolTest::callSum;
+        Callable<Integer> callableInteger = ThreadPoolDemo::callSum;
         Future<String[]> stringFuture = executorService.submit(callableString);
         Future<Integer> integerFuture = executorService.submit(callableInteger);
         try {

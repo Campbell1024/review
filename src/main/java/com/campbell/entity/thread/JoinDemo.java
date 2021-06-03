@@ -1,16 +1,13 @@
-package com.campbell.thread;
-
-import java.util.concurrent.Callable;
-import java.util.concurrent.FutureTask;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/9/1
  */
-public class JoinTest {
+public class JoinDemo {
 
     public static void main(String[] args) throws InterruptedException {
-        Thread t = new Thread(JoinTest::test);
+        Thread t = new Thread(JoinDemo::test);
         t.start();
         System.out.println("开始");
         t.join();

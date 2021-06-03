@@ -1,4 +1,4 @@
-package com.campbell.entity;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell

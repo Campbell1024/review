@@ -1,13 +1,13 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/8/26
  */
-public class InterruptTest {
+public class InterruptDemo {
 
     public static void main(String[] args) {
-        InterruptTest interruptTest = new InterruptTest();
+        InterruptDemo interruptTest = new InterruptDemo();
         Thread t = new Thread(interruptTest::test);
         t.start();
         t.interrupt();

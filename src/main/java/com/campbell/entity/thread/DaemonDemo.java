@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 /**
  * 守护线程
@@ -6,7 +6,7 @@ package com.campbell.thread;
  * @author Campbell
  * @date 2020/8/17
  */
-public class DaemonTest {
+public class DaemonDemo {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {

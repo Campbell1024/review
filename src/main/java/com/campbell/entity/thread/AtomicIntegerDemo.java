@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -6,12 +6,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Campbell
  * @date 2020/8/29
  */
-public class AtomicIntegerTest {
+public class AtomicIntegerDemo {
 
     private AtomicInteger count = new AtomicInteger(0);
 
     public static void main(String[] args) {
-        AtomicIntegerTest atomicTest = new AtomicIntegerTest();
+        AtomicIntegerDemo atomicTest = new AtomicIntegerDemo();
         for (int i = 1; i < 4; i++) {
             new Thread(atomicTest::test, "线程" + i).start();
         }

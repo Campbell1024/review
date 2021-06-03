@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import com.campbell.util.StringUtils;
 
@@ -13,7 +13,7 @@ import java.util.TimerTask;
  * @author Campbell
  * @date 2020/8/8
  */
-public class TimerTest {
+public class TimerDemo {
 
     public static void main(String[] args) {
         System.out.println("请输入定时时间（例如：2020-08-08 00:00:00）：");

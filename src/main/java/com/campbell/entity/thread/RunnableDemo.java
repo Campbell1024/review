@@ -1,10 +1,10 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 /**
  * @author Campbell
  * @date 2020/7/24
  */
-public class RunnableTest {
+public class RunnableDemo {
     public static void main(String[] args) {
         /*MyRunnable myRunnable = new MyRunnable();
         Thread thread = new Thread(myRunnable);
@@ -13,7 +13,7 @@ public class RunnableTest {
             System.out.println(Thread.currentThread().getName()+""+i);
         }*/
 
-        RunnableTest runnableTest = new RunnableTest();
+        RunnableDemo runnableTest = new RunnableDemo();
         runnableTest.createThread();
     }
 

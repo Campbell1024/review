@@ -1,4 +1,4 @@
-package com.campbell.entity;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

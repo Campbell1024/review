@@ -1,4 +1,4 @@
-package com.campbell.thread;
+package com.campbell.entity.thread;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -8,12 +8,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author Campbell
  * @date 2020/8/30
  */
-public class AtomicBooleanTest {
+public class AtomicBooleanDemo {
 
     private AtomicBoolean flag = new AtomicBoolean(true);
 
     public static void main(String[] args) {
-        AtomicBooleanTest atomicBooleanTest = new AtomicBooleanTest();
+        AtomicBooleanDemo atomicBooleanTest = new AtomicBooleanDemo();
         new Thread(atomicBooleanTest::compareAndSwap, "线程1").start();
         new Thread(atomicBooleanTest::compareAndSwap, "线程2").start();
     }
