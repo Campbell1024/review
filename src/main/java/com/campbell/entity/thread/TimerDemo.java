@@ -28,7 +28,7 @@ public class TimerDemo {
             timeString = new Scanner(System.in).nextLine();
         }
         System.out.println("请输入间隔时间（s）：");
-        Integer time = new Scanner(System.in).nextInt();
+        int time = new Scanner(System.in).nextInt();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
@@ -42,7 +42,7 @@ public class TimerDemo {
             public void run() {
                 System.out.println("线程定时任务");
             }
-        }, date, time * 1000);
+        }, date, time * 1000L);
     }
 
 }

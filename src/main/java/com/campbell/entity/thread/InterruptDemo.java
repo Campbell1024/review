@@ -6,18 +6,17 @@ package com.campbell.entity.thread;
  */
 public class InterruptDemo {
 
+    public static void begin() {
+        for (int i = 0; i < 10000; i++) {
+            System.out.println("i=" + i);
+        }
+    }
+
     public static void main(String[] args) {
-        InterruptDemo interruptTest = new InterruptDemo();
-        Thread t = new Thread(interruptTest::test);
+        Thread t = new Thread(InterruptDemo::begin);
         t.start();
         t.interrupt();
         System.out.println("是否停止1？" + t.isInterrupted());
         System.out.println("是否停止2？" + Thread.interrupted());
-    }
-
-    public void test() {
-        for (int i = 0; i < 10000; i++) {
-            System.out.println("i=" + i);
-        }
     }
 }

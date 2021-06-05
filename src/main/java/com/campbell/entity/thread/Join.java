@@ -7,7 +7,7 @@ package com.campbell.entity.thread;
  */
 public class Join {
 
-    public static void start(Thread thread) {
+    public static void begin(Thread thread) {
         try {
             if (null != thread) {
                 thread.join();
@@ -20,9 +20,9 @@ public class Join {
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(() -> Join.start(null));
-        Thread t2 = new Thread(() -> Join.start(t1));
-        Thread t3 = new Thread(() -> Join.start(t2));
+        Thread t1 = new Thread(() -> begin(null));
+        Thread t2 = new Thread(() -> begin(t1));
+        Thread t3 = new Thread(() -> begin(t2));
         t1.start();
         t2.start();
         t3.start();

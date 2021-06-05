@@ -12,7 +12,7 @@ public class Atomic {
 
     private static final AtomicInteger atomicInteger = new AtomicInteger(0);
 
-    public static void start(int num) {
+    public static void begin(int num) {
         while (true) {
             if (atomicInteger.get() == num) {
                 System.out.println(Thread.currentThread().getName() + "开始");
@@ -29,9 +29,9 @@ public class Atomic {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.submit(() -> Atomic.start(0));
-        executorService.submit(() -> Atomic.start(1));
-        executorService.submit(() -> Atomic.start(2));
+        executorService.submit(() -> begin(0));
+        executorService.submit(() -> begin(1));
+        executorService.submit(() -> begin(2));
         executorService.shutdown();
     }
 }

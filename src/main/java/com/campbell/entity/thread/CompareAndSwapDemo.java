@@ -8,17 +8,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author Campbell
  * @date 2020/8/30
  */
-public class AtomicBooleanDemo {
+public class CompareAndSwapDemo {
 
-    private AtomicBoolean flag = new AtomicBoolean(true);
+    private static final AtomicBoolean flag = new AtomicBoolean(true);
 
-    public static void main(String[] args) {
-        AtomicBooleanDemo atomicBooleanTest = new AtomicBooleanDemo();
-        new Thread(atomicBooleanTest::compareAndSwap, "线程1").start();
-        new Thread(atomicBooleanTest::compareAndSwap, "线程2").start();
-    }
-
-    public void compareAndSwap() {
+    public static void begin() {
         System.out.println(Thread.currentThread().getName() + "获取flag：" + flag.get());
         try {
             Thread.sleep(10);
@@ -40,7 +34,13 @@ public class AtomicBooleanDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            compareAndSwap();
+            begin();
         }
     }
+
+    public static void main(String[] args) {
+        new Thread(CompareAndSwapDemo::begin, "线程1").start();
+        new Thread(CompareAndSwapDemo::begin, "线程2").start();
+    }
+
 }

@@ -30,9 +30,7 @@ public class ThreadPoolDemo {
         try {
             System.out.println(Arrays.toString(stringFuture.get()));
             System.out.println(integerFuture.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         executorService.shutdown();

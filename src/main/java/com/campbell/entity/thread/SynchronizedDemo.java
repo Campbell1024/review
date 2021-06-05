@@ -10,21 +10,20 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SynchronizedDemo {
 
     private static int amount = 100;
-    private static int modCount = 0;
-    private static Object lock = new Object();
-    private static Lock reentrantLock = new ReentrantLock();
+
+    private static int count = 0;
+
+    private static final Object lock = new Object();
+
+    private static final Lock reentrantLock = new ReentrantLock();
 
     public static void main(String[] args) {
-        //lambda表达式
-        Runnable runnable = () -> ticket();
-        //方法引用
-        Runnable run = SynchronizedDemo::ticket;
-        new Thread(run, "窗口1").start();
-        new Thread(run, "窗口2").start();
-        new Thread(run, "窗口3").start();
+        new Thread(SynchronizedDemo::begin, "窗口1").start();
+        new Thread(SynchronizedDemo::begin, "窗口2").start();
+        new Thread(SynchronizedDemo::begin, "窗口3").start();
     }
 
-    public static void ticket() {
+    public static void begin() {
         while (true) {
             /*synchronized (lock){
                 if (amount > 0) {
@@ -39,18 +38,20 @@ public class SynchronizedDemo {
                     break;
                 }
             }*/
-
-            reentrantLock.lock();
-            if (amount > 0) {
-                try {
+            try {
+                reentrantLock.lock();
+                if (amount > 0) {
                     Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    System.out.println(Thread.currentThread().getName() + "已卖出" + (++count) + "张票");
+                    System.out.println("剩余" + (--amount) + "张票");
+                } else {
+                    break;
                 }
-                System.out.println(Thread.currentThread().getName() + "正在卖第" + (amount--) + "张票");
-                System.out.println("已卖出" + (++modCount) + "张票");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                reentrantLock.unlock();
             }
-            reentrantLock.unlock();
         }
     }
 }

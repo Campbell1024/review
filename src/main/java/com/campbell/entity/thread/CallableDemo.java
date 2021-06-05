@@ -8,17 +8,17 @@ import java.util.concurrent.*;
  */
 public class CallableDemo {
 
+    public static String begin() {
+        System.out.println("开始");
+        return "callable";
+    }
+
     public static void main(String[] args) {
-        CallableDemo callableTest = new CallableDemo();
-
-        FutureTask<String> futureTask = new FutureTask<>(callableTest::test);
-        /*new Thread(futureTask).start();*/
-
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Future<String> stringFuture = executorService.submit(callableTest::test);
+        Future<String> stringFuture = executorService.submit(CallableDemo::begin);
+        FutureTask<String> futureTask = new FutureTask<>(CallableDemo::begin);
         executorService.submit(futureTask);
         executorService.execute(futureTask);
-
         try {
             System.out.println(stringFuture.get());
             System.out.println(futureTask.get());
@@ -26,10 +26,5 @@ public class CallableDemo {
             e.printStackTrace();
         }
         executorService.shutdown();
-    }
-
-    public String test() {
-        System.out.println("开始");
-        return "callable";
     }
 }

@@ -6,44 +6,40 @@ package com.campbell.entity.thread;
  */
 public class DeadLockDemo {
 
-    public static class Lock1 {
-        public static Lock1 lock1 = new Lock1();
-    }
+    public static final Object o1 = new Object();
 
-    public static class Lock2 {
-        public static Lock2 lock2 = new Lock2();
-    }
+    public static final Object o2 = new Object();
 
-    public static void main(String[] args) {
-        new Thread(() -> testDeadLock(true)).start();
-        new Thread(() -> testDeadLock(false)).start();
-    }
-
-    public static void testDeadLock(boolean flag) {
+    public static void begin(boolean flag) {
         if (flag) {
             //线程获取r1对象锁
-            synchronized (Lock1.lock1) {
-                System.out.println("if...获取r1锁");
+            synchronized (o1) {
+                System.out.println(Thread.currentThread().getName() + "获取锁o1");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (Lock2.lock2) {
+                synchronized (o2) {
                     //线程获取r2对象锁
-                    System.out.println("if...获取r2锁");
+                    System.out.println(Thread.currentThread().getName() + "获取锁o2");
                 }
             }
         } else {
             //线程获取r2对象锁
-            synchronized (Lock2.lock2) {
-                System.out.println("else...获取r2锁");
+            synchronized (o2) {
+                System.out.println(Thread.currentThread().getName() + "获取锁o2");
                 //线程获取r1锁
-                synchronized (Lock1.lock1) {
-                    System.out.println("else...获取r1锁");
+                synchronized (o1) {
+                    System.out.println(Thread.currentThread().getName() + "获取锁o1");
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        new Thread(() -> begin(true), "线程A").start();
+        new Thread(() -> begin(false), "线程B").start();
     }
 
 }

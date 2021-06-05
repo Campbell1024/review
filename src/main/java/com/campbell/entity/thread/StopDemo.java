@@ -1,5 +1,7 @@
 package com.campbell.entity.thread;
 
+import cn.hutool.core.date.DateUtil;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -9,22 +11,21 @@ import java.util.Date;
  */
 public class StopDemo {
 
-    public boolean flag = true;
+    public static boolean flag = true;
 
     public static void main(String[] args) {
-        StopDemo stopTest = new StopDemo();
-        new Thread(stopTest::test).start();
+        new Thread(StopDemo::begin).start();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        stopTest.stopThread();
+        StopDemo.stopThread();
     }
 
-    public void test() {
+    public static void begin() {
         while (flag) {
-            System.out.println("time:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+            System.out.println(DateUtil.now());
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -34,7 +35,7 @@ public class StopDemo {
         System.out.println("线程执行结束");
     }
 
-    public void stopThread() {
+    public static void stopThread() {
         flag = false;
     }
 

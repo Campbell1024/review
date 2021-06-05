@@ -6,15 +6,7 @@ package com.campbell.entity.thread;
  */
 public class JoinDemo {
 
-    public static void main(String[] args) throws InterruptedException {
-        Thread t = new Thread(JoinDemo::test);
-        t.start();
-        System.out.println("开始");
-        t.join();
-        System.out.println("子线程执行完成以后再执行");
-    }
-
-    public static void test() {
+    public static void begin() {
         try {
             int value = (int) (Math.random() * 10000);
             System.out.println("需要等待" + value + "毫秒");
@@ -22,5 +14,13 @@ public class JoinDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        Thread t = new Thread(JoinDemo::begin);
+        t.start();
+        System.out.println("开始");
+        t.join();
+        System.out.println("子线程执行完成以后再执行");
     }
 }

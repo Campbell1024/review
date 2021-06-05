@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  */
 public class CountDown {
 
-    public static void start(CountDownLatch current, CountDownLatch next) {
+    public static void begin(CountDownLatch current, CountDownLatch next) {
         try {
             current.await();
             System.out.println(Thread.currentThread().getName() + "开始");
@@ -26,9 +26,9 @@ public class CountDown {
         CountDownLatch c2 = new CountDownLatch(1);
         CountDownLatch c3 = new CountDownLatch(1);
         ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.submit(() -> CountDown.start(c1, c2));
-        executorService.submit(() -> CountDown.start(c2, c3));
-        executorService.submit(() -> CountDown.start(c3, c3));
+        executorService.submit(() -> begin(c1, c2));
+        executorService.submit(() -> begin(c2, c3));
+        executorService.submit(() -> begin(c3, c3));
         executorService.shutdown();
     }
 }

@@ -8,22 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class AtomicIntegerDemo {
 
-    private AtomicInteger count = new AtomicInteger(0);
+    private static final AtomicInteger count = new AtomicInteger(0);
 
-    public static void main(String[] args) {
-        AtomicIntegerDemo atomicTest = new AtomicIntegerDemo();
-        for (int i = 1; i < 4; i++) {
-            new Thread(atomicTest::test, "线程" + i).start();
-        }
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println(atomicTest.count);
-    }
-
-    public void test() {
+    public static void begin() {
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
@@ -32,5 +19,17 @@ public class AtomicIntegerDemo {
         for (int i = 0; i < 100; i++) {
             count.incrementAndGet();
         }
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i < 4; i++) {
+            new Thread(AtomicIntegerDemo::begin, "线程" + i).start();
+        }
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(count);
     }
 }
