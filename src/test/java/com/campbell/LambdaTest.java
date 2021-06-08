@@ -43,9 +43,7 @@ public class LambdaTest {
     @Test
     public void consumerTest() {
         String s = "hello";
-        printString(string -> {
-            System.out.println(string);
-        }, s);
+        printString(System.out::println, s);
     }
 
     public void printString(Consumer<String> consumer, String s) {
@@ -55,7 +53,7 @@ public class LambdaTest {
     @Test
     public void functionTest() {
         String s = "10";
-        changeType(string -> Integer.parseInt(string), s);
+        changeType(Integer::parseInt, s);
     }
 
     public void changeType(Function<String, Integer> function, String s) {
@@ -82,7 +80,7 @@ public class LambdaTest {
 
     public void judgeString(Predicate<String> predicate, String s) {
         boolean result = predicate.test(s);
-        System.out.println("日期格式是否正确？" + (result == true ? "正确" : "错误"));
+        System.out.println("日期格式是否正确？" + (result ? "正确" : "错误"));
     }
 
     @Test
