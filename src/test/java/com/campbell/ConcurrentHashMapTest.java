@@ -12,12 +12,12 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 2020/8/8
  */
 public class ConcurrentHashMapTest {
+
     public static void main(String[] args) {
         Map<String, Integer> map = new ConcurrentHashMap<>();
         map.put("a", 1);
         map.put("b", 1);
         map.put("c", 1);
-
         Set<Map.Entry<String, Integer>> entries = map.entrySet();
         Iterator<Map.Entry<String, Integer>> entryIterator = entries.iterator();
         while (entryIterator.hasNext()) {

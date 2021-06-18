@@ -10,6 +10,7 @@ import java.util.Properties;
  * @date 2020/10/5
  */
 public class JDBCUtils {
+
     private static String driver;
     private static String url;
     private static String user;
@@ -25,16 +26,13 @@ public class JDBCUtils {
             user = properties.getProperty("jdbc.user");
             password = properties.getProperty("jdbc.password");
             Class.forName(driver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
     }
 
     public static Connection getConnection() throws SQLException {
-        Connection connection = DriverManager.getConnection(url, user, password);
-        return connection;
+        return DriverManager.getConnection(url, user, password);
     }
 
     public static void close(ResultSet resultSet, Statement statement, Connection connection) throws SQLException {
