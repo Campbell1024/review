@@ -9,9 +9,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/mydb?characterEncoding=utf8&serverTimezone=GMT
+      url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&serverTimezone=GMT
       username: root
-      password: 225400
+      password: 12345678
       #初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
       initial-size: 1
       #最小连接池连接数量，最小空闲数量
