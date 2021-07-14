@@ -1,12 +1,14 @@
 package com.campbell.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
 /**
  * @author Campbell
  * @date 2020/6/30
  */
+@EqualsAndHashCode(callSuper = true)
 @SuperBuilder
 @Data
 public class Student extends Person {
