@@ -2,8 +2,6 @@ package com.campbell;
 
 import com.campbell.entity.Person;
 import org.junit.jupiter.api.Test;
-import sun.net.spi.nameservice.dns.DNSNameService;
-
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -20,9 +18,6 @@ public class ClassTest extends BaseTest {
     public void classLoaderTest() {
         ClassLoader cld = String.class.getClassLoader();
         System.out.println(cld);
-
-        ClassLoader loader = DNSNameService.class.getClassLoader();
-        System.out.println(loader);
 
         ClassLoader classLoader = Person.class.getClassLoader();
         System.out.println(classLoader);
