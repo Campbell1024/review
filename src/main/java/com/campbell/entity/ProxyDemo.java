@@ -23,7 +23,7 @@ public class ProxyDemo {
         System.out.println(strings);
         List<String> proxy = (List<String>) Proxy.newProxyInstance(strings.getClass().getClassLoader(), ArrayList.class.getInterfaces(), (p, m, a) -> {
             Object result = m.invoke(strings, a);
-            if (m.getName().equals("remove")) {
+            if ("remove".equals(m.getName())) {
                 Iterator<String> it = strings.iterator();
                 while (it.hasNext()) {
                     if (it.next().equals(a[0])) {
