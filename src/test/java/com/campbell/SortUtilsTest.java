@@ -53,6 +53,13 @@ public class SortUtilsTest extends BaseTest {
     }
 
     @Test
+    public void testQuickSort() {
+        int[] arr = inputArray();
+        SortUtils.quickSort(arr, 0, arr.length - 1);
+        System.out.println("排序后的数组：" + SortUtils.arrayToString(arr));
+    }
+
+    @Test
     public void testBinarySearch() {
         int[] arr = inputArray();
         System.out.println("请输入查找的数字：");

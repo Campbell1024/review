@@ -118,6 +118,19 @@ public class SortUtils {
         }
     }
 
+
+    /**
+     * 快速排序
+     *
+     * @param arr
+     * @param left
+     * @param right
+     */
+    public static void quickSort(int[] arr, int left, int right) {
+
+
+    }
+
     /**
      * 二分查找
      *
