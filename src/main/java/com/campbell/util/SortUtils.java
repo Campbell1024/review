@@ -133,22 +133,29 @@ public class SortUtils {
         }
         int rawLeft = left;
         int rawRight = right;
+        //确定基数
         int baseNumber = arr[rawLeft];
         while (left != right) {
+            //从右开始找比基数小的数
             while (arr[right] >= baseNumber && right > left) {
                 right--;
             }
+            //从左开始找比基数大的数
             while (arr[left] <= baseNumber && right > left) {
                 left++;
             }
+            //交换两数位置
             int temp = arr[left];
             arr[left] = arr[right];
             arr[right] = temp;
         }
+        //基数归位
         int temp = arr[left];
         arr[left] = baseNumber;
         arr[rawLeft] = temp;
+        //递归调用自己，将基数左边排好序
         quickSort(arr, rawLeft, left - 1);
+        //递归调用自己，将基数右边排好序
         quickSort(arr, left + 1, rawRight);
     }
 
