@@ -127,8 +127,29 @@ public class SortUtils {
      * @param right
      */
     public static void quickSort(int[] arr, int left, int right) {
-
-
+        //递归结束条件
+        if (left > right) {
+            return;
+        }
+        int rawLeft = left;
+        int rawRight = right;
+        int baseNumber = arr[rawLeft];
+        while (left != right) {
+            while (arr[right] >= baseNumber && right > left) {
+                right--;
+            }
+            while (arr[left] <= baseNumber && right > left) {
+                left++;
+            }
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
+        int temp = arr[left];
+        arr[left] = baseNumber;
+        arr[rawLeft] = temp;
+        quickSort(arr, rawLeft, left - 1);
+        quickSort(arr, left + 1, rawRight);
     }
 
     /**
@@ -148,7 +169,7 @@ public class SortUtils {
         int endIndex = arr.length - 1;
         while (startIndex <= endIndex) {
             //每次查找的下标中间值
-            int midIndex = (startIndex + endIndex) / 2;
+            int midIndex = (startIndex + endIndex) >> 1;
             if (key < arr[midIndex]) {
                 endIndex = midIndex - 1;
             } else if (key > arr[midIndex]) {
