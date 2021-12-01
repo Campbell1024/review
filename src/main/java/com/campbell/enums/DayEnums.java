@@ -1,5 +1,9 @@
 package com.campbell.enums;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+
 /**
  * @author Campbell
  * @date 2020/7/1
@@ -15,26 +19,22 @@ public enum DayEnums {
     SUNDAY(7, "星期日");
 
     private Integer code;
-    private String name;
+    private String desc;
 
-    DayEnums(Integer code, String name) {
+    DayEnums(Integer code, String desc) {
         this.code = code;
-        this.name = name;
+        this.desc = desc;
     }
 
     public Integer getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
+    public String getDesc() {
+        return desc;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public static String getDesc(Integer code){
+        return Arrays.stream(DayEnums.values()).filter(dayEnums -> dayEnums.getCode().equals(code)).map(DayEnums::getDesc).findFirst().orElse(StringUtils.EMPTY);
     }
 }
