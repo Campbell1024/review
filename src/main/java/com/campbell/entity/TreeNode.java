@@ -1,4 +1,4 @@
-package com.campbell.entity.thread;
+package com.campbell.entity;
 
 /**
  * @author Campbell
@@ -22,9 +22,5 @@ public class TreeNode {
         System.out.println(node.data);
         preGet(node.left);
         preGet(node.right);
-    }
-
-    public static void add(int num) {
-
     }
 }
