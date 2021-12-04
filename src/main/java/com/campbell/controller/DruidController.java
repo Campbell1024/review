@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * @date 2020/10/7
  */
 @RestController
-@RequestMapping(value = "/test")
+@RequestMapping(value = "/druid")
 public class DruidController {
 
     @GetMapping(value = "/{uid}")
