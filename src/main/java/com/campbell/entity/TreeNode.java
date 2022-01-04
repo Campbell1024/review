@@ -10,11 +10,6 @@ public class TreeNode {
     private TreeNode left;
     private TreeNode right;
 
-    public static void main(String[] args) {
-        TreeNode treeNode = new TreeNode();
-
-    }
-
     public static void preGet(TreeNode node) {
         if (null == node) {
             return;
