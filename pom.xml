@@ -18,10 +18,10 @@
 
     <properties>
         <mybatis.version>2.2.2</mybatis.version>
-        <druid.version>1.2.8</druid.version>
-        <fastjson.version>1.2.80</fastjson.version>
+        <druid.version>1.2.11</druid.version>
+        <fastjson.version>2.0.7</fastjson.version>
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
-        <hutool.version>5.7.22</hutool.version>
+        <hutool.version>5.8.3</hutool.version>
     </properties>
 
     <dependencies>
